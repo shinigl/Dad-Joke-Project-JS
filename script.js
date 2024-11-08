@@ -1,6 +1,10 @@
 const joke = document.getElementById('joke');
 const jokeButton = document.getElementById('btn');
-jokeButton.addEventListener("click", fetchJoke);
+const shareTwitter = document.getElementById('share-twitter');
+const shareFacebook = document.getElementById('share-facebook');
+const shareWhatsApp = document.getElementById('share-whatsapp');
+
+
 let API = `https://official-joke-api.appspot.com/random_joke`
 async function fetchJoke(){
 
@@ -8,7 +12,9 @@ async function fetchJoke(){
     let response = await fetch(API); //fetch jokes from API server
     let data = await response.json();
     console.log(data);
-    joke.textContent = data.setup + " " + data.punchline;
+    const jokeText = data.setup + " " + data.punchline;
+    joke.innerText = jokeText;
+    
     }
     catch(error){
     console.log(error);
@@ -21,12 +27,13 @@ function updateShareLinks(jokeText) {
     // Encode the joke text for URL use
     const encodedJokeText = encodeURIComponent(jokeText);
 
-    // Update Twitter share URL
+  
     shareTwitter.href = `https://twitter.com/intent/tweet?text=${encodedJokeText}`;
 
-    // Update Facebook share URL
     shareFacebook.href = `https://www.facebook.com/sharer/sharer.php?u=${encodedJokeText}`;
 
-    // Update WhatsApp share URL
     shareWhatsApp.href = `https://wa.me/?text=${encodedJokeText}`;
 }
+
+
+jokeButton.addEventListener("click", fetchJoke);

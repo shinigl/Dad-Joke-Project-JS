@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,7 @@
             padding: 0;
             font-family: 'Comic Sans MS', cursive, sans-serif;
         }
-        
+
         body {
             background: linear-gradient(to right, #FFB6C1, #FFC0CB);
             display: flex;
@@ -23,7 +24,7 @@
             color: #333;
             font-size: 1.2rem;
         }
-        
+
         /* Main Container */
         .main {
             border-radius: 15px;
@@ -90,6 +91,7 @@
                 opacity: 0;
                 transform: scale(0.5);
             }
+
             100% {
                 opacity: 1;
                 transform: scale(1);
@@ -127,22 +129,26 @@
             background-color: #45a049;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
-        
     </style>
 </head>
+
 <body>
     <div class="main">
         <h1>Dad Joke Generator</h1>
         <p id="joke">Wanna listen a joke?</p>
         <button id="btn">Tell me a Joke Daddy</button>
 
-            <!-- Social Media Share Buttons -->
-            <div class="share-buttons">
-                <a id="share-twitter" href="#" target="_blank">Share on Twitter</a>
-                <a id="share-facebook" href="#" target="_blank">Share on Facebook</a>
-                <a id="share-whatsapp" href="#" target="_blank"><img src="img/whatsapp.svg" alt="whatsapp"></a>
-            </div>
+        <!-- Social Media Share Buttons -->
+        <div class="share-buttons">
+            <a id="share-twitter" href="https://x.com/?lang=en" target="_blank"><img src="img/x.svg"
+                    alt="twitter-icon"></a>
+            <a id="share-facebook" href="https://www.facebook.com/" target="_blank"><img src="img/fb.svg"
+                    alt="fb-icon"></a>
+            <a id="share-whatsapp" href="
+                https://web.whatsapp.com" target="_blank"><img src="img/whatsapp.svg" alt="whatsapp-icon"></a>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
