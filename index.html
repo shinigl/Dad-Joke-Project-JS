@@ -4,19 +4,144 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joke Generator</title>
+    <style>
+        /* Funky Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(to right, #FFB6C1, #FFC0CB);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            color: #333;
+            font-size: 1.2rem;
+        }
+        
+        /* Main Container */
+        .main {
+            border-radius: 15px;
+            background-color: white;
+            border: 5px dashed #FF69B4;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            width: 80vw;
+            max-width: 600px;
+            transition: transform 0.3s ease;
+        }
 
+        /* Hover effect for main container */
+        .main:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #FF1493;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        p {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #6A5ACD;
+            margin: 20px 0;
+            animation: popIn 0.5s ease-in-out;
+        }
+
+        /* Button Style */
+        button {
+            margin-top: 30px;
+            padding: 12px 25px;
+            background: linear-gradient(to right, #FF6347, #FF4500);
+            border: none;
+            border-radius: 30px;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #FF4500, #FF6347);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Hover animation for button */
+        button:active {
+            transform: translateY(2px);
+        }
+
+        /* Keyframes for pop-in animation */
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Fancy effect for the joke */
+        p {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #FF6347;
+            font-size: 1.8rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
+        }
+
+        .share-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .share-buttons a {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .share-buttons a:hover {
+            background-color: #45a049;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+    </style>
 </head>
-<style>
-    .main{
-        border: 2px solid black;
-        height: 400px;
-        width: 80vw;
-        margin: 0 auto;
-    }
-</style>
 <body>
     <div class="main">
-      
+        <h1>Dad Joke Generator</h1>
+        <p id="joke">Wanna listen a joke?</p>
+        <button id="btn">Tell me a Joke Daddy</button>
+
+            <!-- Social Media Share Buttons -->
+            <div class="share-buttons">
+                <a id="share-twitter" href="#" target="_blank">Share on Twitter</a>
+                <a id="share-facebook" href="#" target="_blank">Share on Facebook</a>
+                <a id="share-whatsapp" href="#" target="_blank"><img src="img/whatsapp.svg" alt="whatsapp"></a>
+            </div>
     </div>
     <script src="script.js"></script>
 </body>
